@@ -13,7 +13,21 @@
 #include <stdio.h>
 #include <signal.h>
 
+void bit_to_str(int pid, struct __siginfo * c, void *a)
+{
+	(void) a;
+
+
+}
+
 int	main ()
 {
-	
+	int	pid;
+	struct sigaction	sa;
+
+	pid = getpid();
+	printf("Server PID: %d\n", pid);
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = SA_SIGINFO;
+	sa.sa_sigaction = bit_to_str;
 }

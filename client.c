@@ -34,6 +34,8 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	server_pid = atoi(*argv[1]);
+	if (server_pid <= 0)
+		
 	string_to_be_sent = *argv[2];
 	if (kill(server_pid, SIGUSR1) == -1)
 	{
