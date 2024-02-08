@@ -1,47 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_main.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 23:11:58 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/07 23:48:22 by mosh             ###   ########.fr       */
+/*   Created: 2024/02/08 19:03:52 by mosh              #+#    #+#             */
+/*   Updated: 2024/02/08 19:04:05 by mosh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "../libft/libft.h"
-#include "../libft/ft_printf/ft_printf.h"
-#include <signal.h>
-#include <unistd.h>
-
-void send_signal(int pid, char *str)
-{
-	int i;
-	int c;
-
-	while (*str)
-	{
-		c = *str;
-		i = 0;
-		while (i < 8)
-		{
-			if (1 & (c >> i))
-				kill(pid, SIGUSR2);
-			else
-				kill(pid, SIGUSR1);
-			usleep(100);
-			i++;
-		}
-		str++;
-	}
-	 for (int i = 0; i < 8; ++i)
-    {
-        kill(pid, SIGUSR1);
-        usleep(100);
-	}
-}
+#include "../include/minitalk.h"
 
 int main(int argc, char **argv)
 {

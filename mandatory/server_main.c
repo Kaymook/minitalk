@@ -1,36 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_main.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 23:12:30 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/07 23:12:31 by mosh             ###   ########.fr       */
+/*   Created: 2024/02/08 19:05:17 by mosh              #+#    #+#             */
+/*   Updated: 2024/02/08 19:35:15 by mosh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "../libft/libft.h"
-#include "../libft/ft_printf/ft_printf.h"
-#include <signal.h>
-#include <unistd.h>
-
-void	handler(int signal)
-{
-	static int	i;
-	static char	c;
-
-	if (signal == SIGUSR2)
-		c += (1 << i);
-	i++;
-	if (i == 8)
-	{
-		ft_printf("%c", c);
-		i = 0;
-		c = 0;
-	}
-}
+#include "../include/minitalk.h"
 
 int	main(void)
 {
