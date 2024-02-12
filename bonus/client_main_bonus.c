@@ -6,7 +6,7 @@
 /*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:07:01 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/11 15:47:47 by mosh             ###   ########.fr       */
+/*   Updated: 2024/02/12 17:51:45 by mosh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	main(int argc, char **argv)
 {
 	struct sigaction	sa;
+	int		pid;
 
+	pid = ft_atoi(argv[1]);
 	sa.sa_handler = &b_server_signal;
 	sigaction(SIGUSR2, &sa, NULL);
 	if (argc != 3)
@@ -23,7 +25,12 @@ int	main(int argc, char **argv)
 		ft_printf("You must provide 2 parameters: <PID> & <message>.\n");
 		ft_printf("Please try again\n\n");
 	}
+	if (pid == -1 || (pid >= 0 && 6 >= pid))
+	{
+		ft_printf("\nPID Error\n");
+		return(1);
+	}
 	else
-		b_send_signal(ft_atoi(argv[1]), argv[2]);
+		b_send_signal(pid, argv[2]);
 	return (0);
 }
