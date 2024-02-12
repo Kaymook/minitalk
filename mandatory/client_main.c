@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   client_main.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmoshker <kmoshker@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:03:52 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/12 17:51:39 by mosh             ###   ########.fr       */
+/*   Updated: 2024/02/13 01:20:36 by kmoshker         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	pid;
 
@@ -23,13 +23,12 @@ int main(int argc, char **argv)
 		ft_printf("Please try again.\n");
 		return (1);
 	}
-	if (pid == -1 || (pid >= 0 && 6 >= pid))
+	if (pid < 0 || (pid >= 0 && 2 >= pid))
 	{
 		ft_printf("\nPID Error\n");
-		return(1);
+		return (1);
 	}
 	else
 		send_signal(pid, argv[2]);
 	return (0);
 }
-

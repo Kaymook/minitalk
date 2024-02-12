@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client_utils_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmoshker <kmoshker@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 23:16:27 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/08 19:40:31 by mosh             ###   ########.fr       */
+/*   Updated: 2024/02/12 20:23:01 by kmoshker         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	b_send_signal(int pid, char *str)
 				kill(pid, SIGUSR2);
 			else
 				kill(pid, SIGUSR1);
-			usleep(100);
+			usleep(500);
 			i++;
 		}
 		str++;

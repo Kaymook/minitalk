@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client_main_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmoshker <kmoshker@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:07:01 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/12 17:51:45 by mosh             ###   ########.fr       */
+/*   Updated: 2024/02/13 01:26:40 by kmoshker         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	struct sigaction	sa;
-	int		pid;
+	int					pid;
 
 	pid = ft_atoi(argv[1]);
 	sa.sa_handler = &b_server_signal;
@@ -24,11 +24,12 @@ int	main(int argc, char **argv)
 	{
 		ft_printf("You must provide 2 parameters: <PID> & <message>.\n");
 		ft_printf("Please try again\n\n");
+		return (1);
 	}
-	if (pid == -1 || (pid >= 0 && 6 >= pid))
+	if (pid < 0 || (pid >= 0 && 2 >= pid))
 	{
 		ft_printf("\nPID Error\n");
-		return(1);
+		return (1);
 	}
 	else
 		b_send_signal(pid, argv[2]);

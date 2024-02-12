@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmoshker <kmoshker@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:06:59 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/08 19:40:38 by mosh             ###   ########.fr       */
+/*   Updated: 2024/02/12 20:19:23 by kmoshker         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,4 @@ void	b_send_signal(int pid, char *str);
 void	b_server_signal(int signal);
 void	b_handler(int signal, siginfo_t *sig_info, void *context);
 
-# endif
+#endif

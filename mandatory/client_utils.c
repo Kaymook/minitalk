@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   client_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmoshker <kmoshker@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 23:11:58 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/08 20:25:50 by mosh             ###   ########.fr       */
+/*   Updated: 2024/02/12 21:19:35 by kmoshker         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
 
-void send_signal(int pid, char *str)
+void	send_signal(int pid, char *str)
 {
-	int i;
-	int c;
+	int	i;
+	int	c;
 
 	while (*str)
 	{
@@ -27,7 +27,7 @@ void send_signal(int pid, char *str)
 				kill(pid, SIGUSR2);
 			else
 				kill(pid, SIGUSR1);
-			usleep(100);
+			usleep(300);
 			i++;
 		}
 		str++;

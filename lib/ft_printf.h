@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosh <mosh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmoshker <kmoshker@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:15:51 by mosh              #+#    #+#             */
-/*   Updated: 2024/02/04 09:27:41 by mosh             ###   ########.fr       */
+/*   Updated: 2024/02/12 20:19:33 by kmoshker         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ size_t	ft_put_unsigned_nbr(unsigned int n);
 size_t	ft_putnbr_fd(int n, int fd);
 size_t	ftprintf_helper(va_list ap, char format);
 int		ft_printf(const char *format, ...)
-			__attribute__((format(printf,1,2)));
+		__attribute__((format(printf, 1, 2)));
 #endif
